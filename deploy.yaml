@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dilip1690-deployment
+  labels:
+    app: apache2
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: apache2
+  template:
+    metadata:
+      labels:
+        app: apache2
+    spec:
+      containers:
+      - name: apache2
+        image: dilip1690/project-epgc-image
+        ports:
+        - containerPort: 80
+
